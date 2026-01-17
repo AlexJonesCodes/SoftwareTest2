@@ -12,14 +12,14 @@ This plan targets the core functional and non-functional requirements covered by
 - **R3: Performance thresholds**
   - Response time constraints for the health endpoint.
 
-### Test technique coverage (aligned to requirements)
+### Test technique coverage
 - **Specification-based / functional testing** for R1–R3 through API-level tests.
 - **Structural / white-box testing** via unit tests of the auth middleware branches.
 - **Model-based testing** via a simple auth state transition test (unauthenticated → authenticated → deleted).
 - **Combinatorial testing** via a small set of input combinations for registration.
 - **Performance testing** via response time thresholds.
 
-### Implementation references (tests that answer the plan)
+### Implementation references
 - **R1: Authorization and token handling**
   - Ownership checks for read/update/delete: `__tests__/api/authz.ownership.test.js`
   - Token integrity and deleted-user token rejection: `__tests__/api/authz.tokens.test.js`
