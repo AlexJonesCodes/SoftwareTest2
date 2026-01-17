@@ -1,7 +1,5 @@
 # Test Plan
 
-## 1) Design and implement comprehensive test plans with instrumented code
-
 ### Scope and objectives
 This plan targets the core functional and non-functional requirements covered by the existing and newly added tests:
 
@@ -34,8 +32,6 @@ This plan targets the core functional and non-functional requirements covered by
 - **R3: Performance thresholds**
   - 100ms and 500ms response time checks: `__tests__/app/perf.thresholds.test.js`
 
-## 2) Construction of the test plan
-
 ### Test inventory and traceability
 The plan tracks each requirement and links it to specific tests:
 
@@ -55,35 +51,3 @@ The plan tracks each requirement and links it to specific tests:
 - Run unit tests in isolation with mocks for deterministic coverage of middleware branches.
 - Collect coverage in CI or local runs to confirm instrumentation.
 
-## 3) Evaluation of the quality of the test plan
-
-### Adequacy criteria
-- **Requirements coverage:** Each requirement has at least one direct test and supporting coverage (auth flow, validation, performance).
-- **Technique coverage:** Functional, structural, model-based, combinatorial, and performance techniques are represented.
-- **Risk focus:** Authorization, authentication, and registration are prioritized due to security impact.
-
-### Quality checks
-- Verify each requirement has traceable tests in the table above.
-- Ensure tests include both positive and negative outcomes (success and rejection).
-- Validate that the plan includes non-functional performance expectations.
-
-## 4) Instrumentation of the code
-
-### Instrumentation approach
-- **Jest coverage** is enabled to instrument the code under test and report statement/branch/function/line coverage.
-- Coverage is collected across unit and API tests to ensure key modules (auth, users, orders) are exercised.
-
-### Instrumentation configuration
-- Jest is configured to collect coverage and provide summary reports.
-
-## 5) Evaluation of the instrumentation
-
-### Instrumentation quality criteria
-- **Coverage completeness:** Coverage reports should include auth middleware branches and registration paths.
-- **Signal quality:** Coverage gaps highlight untested branches for future test additions.
-- **Repeatability:** Coverage runs should be deterministic across environments.
-
-### Instrumentation review steps
-- Review coverage summaries after test runs to confirm all required modules are included.
-- Check that unit tests hit the no-token and valid-token branches in auth middleware.
-- Check that API tests exercise user registration and order ownership flows.
