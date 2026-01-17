@@ -19,6 +19,8 @@ This plan targets the core functional and non-functional requirements covered by
 - **Combinatorial testing** via a small set of input combinations for registration.
 - **Performance testing** via response time thresholds.
 
+  And manual system wide testing using Postman
+
 ### Implementation references
 - **R1: Authorization and token handling**
   - Ownership checks for read/update/delete: `__tests__/api/authz.ownership.test.js`
@@ -37,9 +39,9 @@ The plan tracks each requirement and links it to specific tests:
 
 | Requirement | Tests | Goal |
 | --- | --- | --- |
-| R1 | `authz.ownership.test.js`, `authz.tokens.test.js`, `model.auth-state.test.js`, `auth.unit.test.js` | Ensure access control, token validity, and auth flow states are enforced. |
-| R2 | `register.security.test.js`, `register.validation.test.js`, `register.combinatorial.test.js` | Ensure secure password storage and robust input validation. |
-| R3 | `perf.thresholds.test.js` | Ensure response time thresholds are met. |
+| R1 | `authz.ownership.test.js`, `authz.tokens.test.js`, `model.auth-state.test.js`, `auth.unit.test.js` | Access control, token validity, help ensure auth flow states are enforced. |
+| R2 | `register.security.test.js`, `register.validation.test.js`, `register.combinatorial.test.js` | Secure password storage and robust input validation. |
+| R3 | `perf.thresholds.test.js` | Check response time thresholds are met. |
 
 ### Test data and setup
 - User accounts are created through the public API for realism.
