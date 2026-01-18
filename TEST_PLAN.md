@@ -26,7 +26,7 @@ This plan targets the core functional and non-functional requirements covered by
   - Ownership checks for read/update/delete: `__tests__/api/authz.ownership.test.js`
   - Token integrity and deleted-user token rejection: `__tests__/api/authz.tokens.test.js`
   - Auth state transitions: `__tests__/api/model.auth-state.test.js`
-  - Auth middleware branch behavior: `__tests__/app/auth.unit.test.js`
+  - Auth middleware branch behavior (unit testing): `__tests__/app/auth.unit.test.js`
 - **R2: Registration security and validation**
   - Bcrypt cost factor verification: `__tests__/api/register.security.test.js`
   - Duplicate email and role validation: `__tests__/api/register.validation.test.js`
