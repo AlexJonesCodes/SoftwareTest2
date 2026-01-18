@@ -10,22 +10,22 @@ The criteria applied to API endpoints and auth middleware:
 
 ## Findings
 
-1. **Duplicate route definition for user lookup**
+1. **Duplicate user lookup**
    - `GET /user/:userID` is defined twice, which can lead to unexpected behavior and makes maintenance harder.
    - File: `endpoints/users.js` (two separate route handlers for the same path).
    - Recommended change: remove the duplicate block and consolidate logic into a single handler.
 
-2. **Incorrect query field for user lookup**
+2. **Incorrect query field**
    - The user lookup uses `User.findOne({ user: userID })`, but the schema uses `_id` for identifiers.
    - File: `endpoints/users.js`.
    - Recommended change: replace with `User.findById(userID)` or `User.findOne({ _id: userID })`.
 
-3. **Error variable mismatch in login**
+3. **Error variable mismatch**
    - In the login callback, the variable is `error` but the response references `err`, which is undefined and will throw.
    - File: `endpoints/users.js`.
    - Recommended change: return the actual `error` in the response or log it consistently.
 
-4. **Missing null checks before authorization checks**
+4. **Missing null checks before authorisation checks**
    - Order update/delete flows access `orderFound.user` before confirming the order exists.
    - File: `endpoints/orders.js`.
    - Recommended change: check `orderFound` and return `404` before using properties.
