@@ -46,9 +46,9 @@ The plan tracks each requirement and links it to specific tests:
 ### Test data and setup
 - User accounts are created through the public API for realism.
 - Admin credentials are used for privileged actions.
-- Unique suffixes avoid collisions in shared environments.
+- Unique suffixes avoid collisions in shared environments, but this is also tested.
 
-### Execution strategy
+### Execution strategy for future
 - Run API/integration tests against a running service instance.
 - Run unit tests in isolation with mocks for deterministic coverage of middleware branches.
 - Collect coverage in CI or local runs to confirm instrumentation.
