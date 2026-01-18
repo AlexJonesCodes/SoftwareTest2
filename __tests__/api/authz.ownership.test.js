@@ -58,7 +58,7 @@ describe("AuthZ ownership tests for orders", () => {
 
   it("R1-T03: should block non-owner from updating another user's order", async () => {
     // Why this test exists:
-    // R1 requires ownership checks on mutations, not just reads.
+    // R1 requires ownership checks on mutations as well as reads.
     await axios
       .put(
         prepare("/order"),
@@ -76,8 +76,7 @@ describe("AuthZ ownership tests for orders", () => {
 
   it("R1-T04: should block non-owner from deleting another user's order", async () => {
     // Why this test exists:
-    // R1 requires that non-owners cannot delete resources and that the resource
-    // remains intact after a denied request.
+    // R1 requires that non-owners cannot delete resources and that the resource remains intact after a denied request.
     await axios
       .delete(prepare(`/order/${orderId}`), otherUserConfig)
       .catch((error) => {
