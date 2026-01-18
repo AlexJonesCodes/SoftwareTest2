@@ -50,6 +50,6 @@ The plan tracks each requirement and links it to specific tests:
 
 ### Execution strategy for future
 - Run API/integration tests against a running service instance.
-- Run unit tests in isolation with mocks for deterministic coverage of middleware branches.
+- Run unit tests in isolation for deterministic coverage of middleware branches.
 - Collect coverage in CI or local runs to confirm instrumentation.
 
