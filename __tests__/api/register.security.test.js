@@ -19,8 +19,7 @@ describe("Registration security tests", () => {
 
   it("R2-T03: should store bcrypt hash with cost factor 8", async () => {
     // Why this test exists:
-    // R2 requires bcrypt hashing with cost factor 8 to ensure password storage
-    // is sufficiently strong and consistent.
+    // R2 requires bcrypt hashing with cost factor 8 to ensure password storage is sufficiently strong and consistent.
     const uniqueSuffix = Date.now();
     const email = `testbcrypt_${uniqueSuffix}@example.com`;
     const plaintextPassword = "12345";
